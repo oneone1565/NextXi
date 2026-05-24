@@ -16,7 +16,7 @@ def nexi_decrypt(data: bytes, key: bytes) -> bytes:
         out.append((b - k) & 0xFF)
     return bytes(out)
 
-def nextxi(data, key=None, decrypt=False):
+def nextxi_ori(data, key=None, decrypt=False):
     if isinstance(data, str):
         data = data.encode("utf-8")
 
