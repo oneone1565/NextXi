@@ -11,7 +11,7 @@ def nesh(data: bytes) -> bytes:
     h.update(data)
     return h.digest()
 
-def nexi_with_nesh(data: bytes, key: bytes) -> bytes:
+def nextxi_with_nesh(data: bytes, key: bytes) -> bytes:
     base = nesh(data, key)  # Nesh 只是参与
     out = bytearray()
     for i, b in enumerate(data):
@@ -20,7 +20,7 @@ def nexi_with_nesh(data: bytes, key: bytes) -> bytes:
     return bytes(out)
 
 
-def nexi_with_nesh_decrypt(data: bytes, key: bytes) -> bytes:
+def nextxi_with_nesh_decrypt(data: bytes, key: bytes) -> bytes:
     base = nesh(data, key)
     out = bytearray()
     for i, b in enumerate(data):
